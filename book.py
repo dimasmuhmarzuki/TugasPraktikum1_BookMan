@@ -7,14 +7,14 @@ class Book:
         if year < 0 or year > 2100:
             raise ValueError("Tahun hanya bisa diisi dari tahun 2000 sampai 2100")
         
-        self.title = title.strip
-        self.author = author.strip
+        self.title = title.strip()
+        self.author = author.strip()
         self.year = year
 
     def __str__(self):
         return f"{self.title} by {self.author} ({self.year})"
     
-    def __eq__(self, value):
+    def __eq__(self, other):
         if not isinstance(other, Book):
             return False
         return (self.title == other.title and
